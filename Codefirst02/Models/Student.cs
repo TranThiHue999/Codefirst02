@@ -11,8 +11,13 @@ namespace Codefirst02.Models
     public class Student
     {
         [Key]
+        [MinLength(5)]
+        [Required(ErrorMessage = " StudentID is required")]
         public string StudentID { get; set; }
+       
+        [Required(ErrorMessage = "StudentName is required")]
         public string StudentName { get; set; }
+       
         public string Address { get; set; }
 
     }
