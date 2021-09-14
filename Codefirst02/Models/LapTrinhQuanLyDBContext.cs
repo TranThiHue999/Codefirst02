@@ -1,3 +1,4 @@
+using Codefirst02.Controllers;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -22,6 +23,9 @@ namespace Codefirst02.Models
         public virtual DbSet<Person> Person { get; set; }
 
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+  
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TBLDeTai>()

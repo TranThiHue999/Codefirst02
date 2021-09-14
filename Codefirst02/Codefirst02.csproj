@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -154,7 +155,12 @@
     <Compile Include="Migrations\202109120701330_Altr_Column.Designer.cs">
       <DependentUpon>202109120701330_Altr_Column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109140625471_Create_Employee.cs" />
+    <Compile Include="Migrations\202109140625471_Create_Employee.Designer.cs">
+      <DependentUpon>202109140625471_Create_Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
@@ -208,6 +214,11 @@
     <Content Include="Views\Person\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -240,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109120701330_Altr_Column.resx">
       <DependentUpon>202109120701330_Altr_Column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109140625471_Create_Employee.resx">
+      <DependentUpon>202109140625471_Create_Employee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
