@@ -17,7 +17,7 @@ namespace Codefirst02.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Person.ToList());
+            return View(db.Employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -27,7 +27,7 @@ namespace Codefirst02.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Person.Find(id);
+            Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -65,7 +65,7 @@ namespace Codefirst02.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Person.Find(id);
+            Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace Codefirst02.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Person.Find(id);
+            Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace Codefirst02.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Employee employee = db.Person.Find(id);
+            Employee employee = db.Employees.Find(id);
             db.Person.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
