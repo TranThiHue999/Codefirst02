@@ -13,10 +13,14 @@ namespace Codefirst02.Controllers
     public class EmployeesController : Controller
     {
         private LapTrinhQuanLyDBContext db = new LapTrinhQuanLyDBContext();
+        AutoGenerateKey aukey = new AutoGenerateKey();
 
         // GET: Employees
         public ActionResult Index()
         {
+            //lay gia tri ban gi cuoi cung trong doi tuong person
+            
+
             return View(db.Employees.ToList());
         }
 
