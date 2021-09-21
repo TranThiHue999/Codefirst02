@@ -19,7 +19,9 @@ namespace Codefirst02.Controllers
         public ActionResult Index()
         {
             //lay gia tri ban gi cuoi cung trong doi tuong person
-            
+            var perID = db.Person.OrderByDescending(m => m.PersonID).FirstOrDefault().PersonID;
+            var newID = aukey.GenerateKey(perID);
+            ViewBag.newPerID = newID;
 
             return View(db.Employees.ToList());
         }
