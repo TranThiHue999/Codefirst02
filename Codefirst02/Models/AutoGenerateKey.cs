@@ -8,16 +8,24 @@ namespace Codefirst02.Models
 {
     public class AutoGenerateKey
     {
-        public string GenerateKey ( string id )
+        public string GenerateKey(string id)
         {
-            string strkey ="";
+            string strkey = "";
+            string numpPart = "",
+            strPart = "",
+            strPhanSo = "";
+            numpPart = Regex.Match(id, @"\d+").Value;
+            strPart = Regex.Match(id, @"\D+").Value;
 
-            string numPart ="", strPart = "";
-
-            numPart = Regex.Match(id, @"\d+").Value;
-
-            strkey = strPart + (Convert.ToInt32(numPart) +1);
-
-
+            int PhanSo = (Convert.ToInt32(numpPart) + 1);
+            for (int i = 0; i < numpPart.Length - PhanSo.ToString().Length; i++)
+            {
+                strPhanSo += "0";
+            }
+            strPhanSo += PhanSo;
+            //tách phần chữ
+            strkey = strPart + strPhanSo;
+            return strkey;
+        }
     }
 }
