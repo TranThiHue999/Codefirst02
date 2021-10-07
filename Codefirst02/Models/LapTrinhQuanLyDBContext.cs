@@ -24,8 +24,9 @@ namespace Codefirst02.Models
 
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-  
-        
+        public virtual DbSet<Account> Accounts { get; set; }
+        public object Roles { get; internal set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TBLDeTai>()
