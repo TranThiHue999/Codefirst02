@@ -45,7 +45,7 @@ namespace Codefirst02.Models
             using (LapTrinhQuanLyDBContext db = new LapTrinhQuanLyDBContext())
             {
                 var userRoles = (from user in db.Accounts
-                                 join role in db.Role
+                                 join role in db.Roles
                                  on user.RoleID equals role.RoleID
                                  where user.UserName == username
                                  select role.RoleID).ToArray();
